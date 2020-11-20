@@ -1,0 +1,33 @@
+#logging:
+#  level:
+#    root: "warn"
+#    org.springframework.web: "debug"
+#    org.hibernate: "error"
+
+spring:
+  task:
+    execution:
+      pool:
+        max-size: 16
+        queue-capacity: 100
+        keep-alive: "10s"
+  security:
+    user:
+      name: admin
+      password: admin123
+
+  h2:
+    console:
+      enabled: true
+server:
+  port: 8081
+  datasource:
+    url: "jdbc:mysql://localhost/test"
+    username: "dbuser"
+    password: "dbpass"
+    jdbc:
+      template:
+        max-rows: 500
+    jpa:
+      hibernate:
+        ddl-auto=create-drop: create-drop
