@@ -1,10 +1,11 @@
 #logging:
-#  level:
-#    root: "warn"
-#    org.springframework.web: "debug"
-#    org.hibernate: "error"
+#  file:
+#    name: ${spring.application.name}".log"
+#  config: classpath:log4j2-spring.xml
 
 spring:
+  application:
+    name: starter-security
   task:
     execution:
       pool:
