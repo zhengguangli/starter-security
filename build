@@ -5,3 +5,4 @@ IMAGE_NAME=$NAME:`git rev-parse --short HEAD| awk '{print $1}'`
 
 mvn clean package -DskipTests && docker rmi $IMAGE_NAME
 docker build -t $IMAGE_NAME --build-arg JAR_FILE=./target/$NAME.jar .
+echo y | docker image prune --filter label=stage=builder
