@@ -3,5 +3,5 @@
 NAME=starter-security
 IMAGE_NAME=$NAME:`git rev-parse --short HEAD| awk '{print $1}'`
 
-docker rmi $IMAGE_NAME
+mvn clean package -DskipTests && docker rmi $IMAGE_NAME
 docker build -t $IMAGE_NAME --build-arg JAR_FILE=./target/$NAME.jar .
