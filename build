@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=starter-security
-IMAGE_NAME=$NAME:$1
+IMAGE_NAME=$NAME:`git rev-parse --short HEAD| awk '{print $1}'`
 
 docker rmi $IMAGE_NAME
 docker build -t $IMAGE_NAME --build-arg JAR_FILE=./target/$NAME.jar .
