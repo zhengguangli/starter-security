@@ -5,7 +5,7 @@ NAME=starter-security
 # set image name
 IMAGE_NAME=$NAME:`git rev-parse --short HEAD| awk '{print $1}'`
 
-# maven package & auto_build docker image
+# maven package && auto_build docker image
 mvn clean package -DskipTests && docker rmi $IMAGE_NAME
 docker build -t $IMAGE_NAME --build-arg JAR_FILE=./target/$NAME.jar .
 
