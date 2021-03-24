@@ -10,4 +10,9 @@ public class HellowT {
     public String test() {
         return "success";
     }
+
+    @GetMapping("/error")
+    public String test1() {
+        return "error";
+    }
 }
